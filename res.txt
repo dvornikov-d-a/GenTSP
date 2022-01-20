@@ -1,0 +1,6 @@
+Минимальный путь: 2612
+Правильный ответ: ('Berlin', 'Hamburg', 'Bremen', 'Hannover', 'Dortmund', 'Essen', 'Duisburg', 'Dusseldorf', 'Koln', 'Frankfurt am Main', 'Stuttgart', 'Munchen', 'Nurnberg', 'Leipzig', 'Dresden')
+
+Лучший результат: 0.9412612612612613
+Длина маршрута:  2775
+Лучший маршрут: ['Duisburg', 'Essen', 'Dortmund', 'Hannover', 'Bremen', 'Hamburg', 'Berlin', 'Dresden', 'Leipzig', 'Nurnberg', 'Munchen', 'Stuttgart', 'Frankfurt am Main', 'Koln', 'Dusseldorf']
