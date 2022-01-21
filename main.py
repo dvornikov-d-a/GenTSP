@@ -1,4 +1,4 @@
-import random
+import time
 from matrix import Matrix
 from genetic import Genetic
 
@@ -11,12 +11,22 @@ genetic = Genetic(
     desired_fitness=1
 )
 
+start_time = time.time()
+
 genetic.fit()
 
-print('Минимальный путь:', matrix.right_distance)
-print('Правильный ответ:', matrix.right_cities)
-print()
-print('Лучший результат:', matrix.score(genetic.best))
-print('Длина маршрута: ', matrix.path_len(genetic.best))
-print('Лучший маршрут:', matrix.get_names(genetic.best))
+finish_time = time.time()
+calculations_time = finish_time - start_time
+minutes, seconds = calculations_time // 60, int(calculations_time % 60)
+
+with open('res.txt', 'w', encoding='utf-8') as f:
+    f.write(f'Время вычислений: {minutes} min {seconds} sec\n')
+    f.write(f'\n')
+    f.write(f'Минимальная длина пути: {matrix.right_distance} km\n')
+    f.write(f'Правильный ответ: {", ".join(matrix.right_cities)}\n')
+    f.write(f'\n')
+    f.write(f'Лучший результат: {matrix.score(genetic.best) * 100}%\n')
+    f.write(f'Длина маршрута: {matrix.path_len(genetic.best)} km\n')
+    f.write(f'Лучший маршрут: {", ".join(matrix.get_names(genetic.best))}\n')
+    f.write(f'\n')
 

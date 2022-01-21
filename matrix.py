@@ -43,11 +43,11 @@ class Matrix:
         for i, from_ in enumerate(seq[:-1]):
             to_ = seq[i + 1]
             path += self._matrix[from_][to_]
-        path += self._matrix[-1][0]
+        path += self._matrix[seq[-1]][seq[0]]
         return path
 
     def score(self, seq):
         path_len = self.path_len(seq)
-        score = self._right_distance / path_len
+        score = round(self._right_distance / path_len, 4)
         return score
 
